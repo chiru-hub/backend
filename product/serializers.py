@@ -17,12 +17,12 @@ class ProductSerializer(serializers.ModelSerializer):
     )
 
 class CategorySerializer(serializers.ModelSerializer):
-  product = ProductSerializer(many=True)
+  products = ProductSerializer(many=True)
   class Meta:
     model = Category
     fields = (
       "id",
       "name",
       "get_absolute_url",
-      "product"
+      "products"
     )
